@@ -196,4 +196,29 @@ class LinkedList {
             $next ? $prev->setNext($next) : $prev->clearNext();
         }
     }
+
+    /**
+     * Set the value at a particular index
+     *
+     * @param $index
+     * @param $value
+     */
+    public function set($index, $value)
+    {
+        $node = $this->head;
+
+        if($index < 0){
+            throw new \LogicException("Index out of range: $index");
+        }
+
+        for($i = 0; $i < $index && $node !== null; $i++){
+            $node = $node->getNext();
+        }
+
+        if($node === null){
+            throw new \LogicException("Index out of range: $index");
+        }
+
+        $node->setValue($value);
+    }
 }
