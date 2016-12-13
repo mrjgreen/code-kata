@@ -153,4 +153,24 @@ class LinkedListTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(200, $list->get(1));
         $this->assertEquals(300, $list->get(2));
     }
+
+    public function testListCanBeRemoved()
+    {
+        $list = new \Coding\LinkedList\LinkedList();
+
+        $list->pushFront(300);
+        $list->pushFront(200);
+        $list->pushFront(100);
+
+        $list->remove(1);
+        $this->assertEquals(300, $list->back());
+        $this->assertEquals(100, $list->front());
+
+        $list->remove(0);
+        $this->assertEquals(300, $list->back());
+
+        $list->remove(0);
+
+        $this->assertTrue($list->isEmpty());
+    }
 }

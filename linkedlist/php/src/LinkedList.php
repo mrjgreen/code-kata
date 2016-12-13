@@ -163,4 +163,37 @@ class LinkedList {
 
         return $node->getValue();
     }
+
+    /**
+     * Remove the value at a particular index
+     *
+     * @param $index
+     * @return mixed
+     */
+    public function remove($index)
+    {
+        $prev = null;
+        $node = $this->head;
+
+        if($index < 0){
+            throw new \LogicException("Index out of range: $index");
+        }
+
+        for($i = 0; $i < $index && $node !== null; $i++){
+            $prev = $node;
+            $node = $node->getNext();
+        }
+
+        if($node === null){
+            throw new \LogicException("Index out of range: $index");
+        }
+
+        $next = $node->getNext();
+
+        if($prev === null){
+            $this->head = $next;
+        }else {
+            $next ? $prev->setNext($next) : $prev->clearNext();
+        }
+    }
 }
