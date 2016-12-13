@@ -35,7 +35,7 @@ class LinkedList {
     {
         $node = new Node($value);
 
-        if($this->head != null){
+        if($this->head !== null){
             $node->setNext($this->head);
         }
 
@@ -46,7 +46,7 @@ class LinkedList {
     {
         $newNode = new Node($value);
 
-        if($this->head == null){
+        if($this->head === null){
             $this->head = $newNode;
         }else {
             $node = $this->head;
