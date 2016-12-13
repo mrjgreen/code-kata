@@ -7,6 +7,11 @@ class LinkedList {
      */
     private $head = null;
 
+    /**
+     * Return the item at the front of the list
+     *
+     * @return mixed
+     */
     public function front()
     {
         if($this->head === null){
@@ -16,6 +21,11 @@ class LinkedList {
         return $this->head->getValue();
     }
 
+    /**
+     * Return the item at the back of the list
+     *
+     * @return mixed
+     */
     public function back()
     {
         if($this->head === null){
@@ -31,6 +41,11 @@ class LinkedList {
         return $node->getValue();
     }
 
+    /**
+     * Add an item to the front of the list
+     *
+     * @param $value
+     */
     public function pushFront($value)
     {
         $node = new Node($value);
@@ -42,6 +57,11 @@ class LinkedList {
         $this->head = $node;
     }
 
+    /**
+     * Add an item to the end of the list
+     *
+     * @param $value
+     */
     public function pushBack($value)
     {
         $newNode = new Node($value);
@@ -59,6 +79,11 @@ class LinkedList {
         }
     }
 
+    /**
+     * Return the value at the front of the list and remove the item
+     *
+     * @return mixed
+     */
     public function popFront()
     {
         if($this->head === null){
@@ -74,6 +99,11 @@ class LinkedList {
         return $value;
     }
 
+    /**
+     * Return the value at the end of the list and remove the item
+     *
+     * @return mixed
+     */
     public function popBack()
     {
         if($this->head === null){
@@ -99,11 +129,22 @@ class LinkedList {
         return $value;
     }
 
+    /**
+     * Check if the list is empty
+     *
+     * @return bool
+     */
     public function isEmpty()
     {
         return $this->head === null;
     }
 
+    /**
+     * Access the value at a particular index
+     *
+     * @param $index
+     * @return mixed
+     */
     public function get($index)
     {
         $node = $this->head;
