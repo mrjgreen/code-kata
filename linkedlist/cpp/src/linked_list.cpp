@@ -17,6 +17,23 @@ namespace jg {
     }
 
     template <class T>
+    void LinkedList<T>::PushBack(T value) {
+        auto *newNode = new ListElement<T>(value);
+        if (Empty()){
+            head_ = newNode;
+            return;
+        }
+
+        auto node = head_;
+
+        while(node->GetNext() != nullptr){
+            node = node->GetNext();
+        }
+
+        node->SetNext(newNode);
+    }
+
+    template <class T>
     T LinkedList<T>::Front() {
         if (Empty()){
             throw std::logic_error("List is empty");

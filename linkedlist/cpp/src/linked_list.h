@@ -12,8 +12,10 @@ namespace jg {
         LinkedList() : head_(nullptr) {};
         // Returns true if list is empty
         bool Empty() const;
-        // Returns the number of items in the list
+        // Add an item to the front of the list
         void PushFront(T value);
+        // Add an item to the back of the list
+        void PushBack(T value);
         // Returns the value of first item on the list
         T Front();
         // Returns the value of last item on the list

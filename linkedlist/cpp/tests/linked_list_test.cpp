@@ -47,4 +47,25 @@ SCENARIO( "list can be instantiated and populated", "[list]" ) {
             }
         }
     }
+
+    GIVEN( "A list" ) {
+
+        jg::LinkedList<int> list{};
+
+        WHEN( "When an item is added to the back" ) {
+
+            list.PushFront(1);
+            list.PushBack(2);
+
+            THEN( "a call to Back() returns the item pushed to the back" ) {
+
+                REQUIRE(list.Back() == 2);
+            }
+
+            THEN( "a call to Front() returns the item pushed to the front" ) {
+
+                REQUIRE(list.Front() == 1);
+            }
+        }
+    }
 }
