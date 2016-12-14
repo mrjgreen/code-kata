@@ -10,6 +10,8 @@ namespace jg {
     public:
         ListElement(const T val) : value_(val), next_(nullptr){}
         void SetNext(ListElement<T> *next){next_ = next;}
+        T GetValue(){return value_;}
+        ListElement<T>* GetNext(){return next_;}
     private:
         T value_;
         ListElement<T> *next_;

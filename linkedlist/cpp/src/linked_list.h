@@ -14,6 +14,10 @@ namespace jg {
         bool Empty() const;
         // Returns the number of items in the list
         void PushFront(T value);
+        // Returns the value of first item on the list
+        T Front();
+        // Returns the value of last item on the list
+        T Back();
     private:
         ListElement<T> *head_;
     };

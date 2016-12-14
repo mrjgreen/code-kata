@@ -38,12 +38,12 @@ SCENARIO( "list can be instantiated and populated", "[list]" ) {
 
             THEN( "a call to Front() returns the last item pushed" ) {
 
-                REQUIRE(list.Front() == 1);
+                REQUIRE(list.Front() == 2);
             }
 
             THEN( "a call to Back() returns the first item pushed" ) {
 
-                REQUIRE(list.Back() == 2);
+                REQUIRE(list.Back() == 1);
             }
         }
     }
