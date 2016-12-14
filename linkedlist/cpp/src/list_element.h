@@ -10,9 +10,6 @@ namespace jg {
     class ListElement {
     public:
         ListElement(const T val) : value(val), next(nullptr){}
-        ~ListElement(){
-            std::cout << "Called destructor on list element\n";
-        }
     public:
         T value;
         std::unique_ptr<ListElement<T>> next;

@@ -1,5 +1,4 @@
 #include "linked_list.h"
-#include <stdexcept>
 
 namespace jg {
 
@@ -27,7 +26,7 @@ namespace jg {
 
         auto node = head_.get();
 
-        while(node->next != nullptr){
+        while(node->next){
             node = node->next.get();
         }
 
@@ -51,7 +50,7 @@ namespace jg {
 
         auto node = head_.get();
 
-        while(node->next != nullptr){
+        while(node->next){
             node = node->next.get();
         }
 
