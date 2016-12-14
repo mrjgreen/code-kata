@@ -10,27 +10,28 @@ namespace jg {
 
     template <class T>
     void LinkedList<T>::PushFront(T value) {
-        auto *node = new ListElement<T>(value);
+        std::unique_ptr<ListElement<T>> node(new ListElement<T>(value));
 
-        node->SetNext(head_);
-        head_ = node;
+        node->next = std::move(head_);
+        head_ = std::move(node);
     }
 
     template <class T>
     void LinkedList<T>::PushBack(T value) {
-        auto *newNode = new ListElement<T>(value);
+        std::unique_ptr<ListElement<T>> newNode(new ListElement<T>(value));
+
         if (Empty()){
-            head_ = newNode;
+            head_ = std::move(newNode);
             return;
         }
 
-        auto node = head_;
+        auto node = head_.get();
 
-        while(node->GetNext() != nullptr){
-            node = node->GetNext();
+        while(node->next != nullptr){
+            node = node->next.get();
         }
 
-        node->SetNext(newNode);
+        node->next = std::move(newNode);
     }
 
     template <class T>
@@ -39,7 +40,7 @@ namespace jg {
             throw std::logic_error("List is empty");
         }
 
-        return head_->GetValue();
+        return head_->value;
     }
 
     template <class T>
@@ -48,12 +49,12 @@ namespace jg {
             throw std::logic_error("List is empty");
         }
 
-        auto node = head_;
+        auto node = head_.get();
 
-        while(node->GetNext() != nullptr){
-            node = node->GetNext();
+        while(node->next != nullptr){
+            node = node->next.get();
         }
 
-        return node->GetValue();
+        return node->value;
     }
 }

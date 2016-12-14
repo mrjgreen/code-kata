@@ -21,7 +21,7 @@ namespace jg {
         // Returns the value of last item on the list
         T Back();
     private:
-        ListElement<T> *head_;
+        std::unique_ptr<ListElement<T>> head_;
     };
 }
 

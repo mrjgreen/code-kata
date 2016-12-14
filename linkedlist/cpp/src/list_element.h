@@ -2,19 +2,20 @@
 #define CPP_LIST_ELEMENT_H
 
 #include <memory>
+#include <iostream>
 
 namespace jg {
 
     template<class T>
     class ListElement {
     public:
-        ListElement(const T val) : value_(val), next_(nullptr){}
-        void SetNext(ListElement<T> *next){next_ = next;}
-        T GetValue(){return value_;}
-        ListElement<T>* GetNext(){return next_;}
-    private:
-        T value_;
-        ListElement<T> *next_;
+        ListElement(const T val) : value(val), next(nullptr){}
+        ~ListElement(){
+            std::cout << "Called destructor on list element\n";
+        }
+    public:
+        T value;
+        std::unique_ptr<ListElement<T>> next;
     };
 }
 
