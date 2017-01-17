@@ -10,7 +10,6 @@ Multilingual data structure implmentations, with an emphasis on using idomatic t
  * Python
  * Go
  * Ruby
- * Haskell
  
 #### Data Structures
 
