@@ -21,7 +21,7 @@ Great resource for ideas: http://www.columbia.edu/~jxz2101/
  * Binary Search Tree
  
  
- #### Algorithms
- 
-  * Quick Sort
+#### Algorithms
+
+ * Quick Sort
  
