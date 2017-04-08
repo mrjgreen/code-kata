@@ -9,8 +9,8 @@ Multilingual data structure implmentations, with an emphasis on using idomatic t
  * C++
  * Python
  * Go
- * Ruby
- 
+ * Rust
+
 #### Data Structures
 
 Great resource for ideas: http://www.columbia.edu/~jxz2101/
@@ -19,9 +19,8 @@ Great resource for ideas: http://www.columbia.edu/~jxz2101/
  * Stack
  * Queue
  * Binary Search Tree
- 
- 
+
+
 #### Algorithms
 
  * Quick Sort
- 
